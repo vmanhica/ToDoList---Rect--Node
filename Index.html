@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Todo List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1> Network To do List</h1>
+
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Ex: Configurar VLAN 10">
+      <input type="text" id="techInput" placeholder="Técnico responsável">
+      <select id="priorityInput">
+        <option  value="Alta">Alta</option>
+        <option   value="Média">Média</option>
+        <option  value="Baixa">Baixa</option>
+      </select>
+      <input type="number" id="daysInput" placeholder="Previsão (dias)" min="1">
+      <button onclick="addTask()">Adicionar</button>
+    </div>
+
+    <span class="error" id="errorMsg"></span>
+
+    <div class="filters">
+      <button onclick="filterTasks('all')">Todas</button>
+      <button onclick="filterTasks('pending')">Pendentes</button>
+      <button onclick="filterTasks('completed')">Concluídas</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <div class="report-buttons">
+      <button onclick="sendDailyWhatsAppReport()">Enviar WhatsApp</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
